@@ -2045,10 +2045,12 @@ func TestWriteWithFilter(t *testing.T) {
 
 	f := excelize.NewFile()
 
+	//add header
 	f.SetCellValue("Sheet1", "A1", "ID")
 	f.SetCellValue("Sheet1", "B1", "Name")
 	f.SetCellValue("Sheet1", "C1", "Major")
 
+	//add data
 	for i := 0; i < len(students); i++ {
 		f.SetCellValue("Sheet1", fmt.Sprint("A", i+2), students[i].id)
 		f.SetCellValue("Sheet1", fmt.Sprint("B", i+2), students[i].name)
